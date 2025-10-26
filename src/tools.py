@@ -1,7 +1,8 @@
-from typing import Optional
 from datetime import datetime, timedelta
-from src.feed.constants import COMMON_FEEDS
+from typing import Optional
+
 from src.feed.base import Feed
+from src.feed.constants import COMMON_FEEDS
 
 
 def get_feeds_for_mcp(category: Optional[str] = None) -> list[dict]:
@@ -66,7 +67,9 @@ def get_publications_for_mcp() -> list[str]:
     return sorted(list(publications))
 
 
-def get_recent_entries_for_mcp(url: str, hours: int = 24, max_chars_per_entry: int = 200) -> list[dict]:
+def get_recent_entries_for_mcp(
+    url: str, hours: int = 24, max_chars_per_entry: int = 200
+) -> list[dict]:
     """Get only entries published within the last N hours"""
     feed = Feed(publication="Custom", url=url)
     content = feed.parse_feed(max_chars_per_entry)

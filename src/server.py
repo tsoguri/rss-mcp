@@ -1,13 +1,15 @@
-from mcp.server.fastmcp import FastMCP
 from typing import Optional
+
+from mcp.server.fastmcp import FastMCP
+
 from src.tools import (
-    get_feeds_for_mcp,
-    parse_feed_for_mcp,
-    validate_feed_url_for_mcp,
+    filter_entries_by_keywords_for_mcp,
     get_feed_categories_for_mcp,
+    get_feeds_for_mcp,
     get_publications_for_mcp,
     get_recent_entries_for_mcp,
-    filter_entries_by_keywords_for_mcp,
+    parse_feed_for_mcp,
+    validate_feed_url_for_mcp,
 )
 
 mcp = FastMCP("rss-feed")
@@ -63,7 +65,9 @@ def get_publications() -> list[str]:
 
 
 @mcp.tool()
-def get_recent_entries(url: str, hours: int = 24, max_chars_per_entry: int = 200) -> list[dict]:
+def get_recent_entries(
+    url: str, hours: int = 24, max_chars_per_entry: int = 200
+) -> list[dict]:
     """Get only entries published within the last N hours"""
     return get_recent_entries_for_mcp(url, hours, max_chars_per_entry)
 
@@ -73,7 +77,9 @@ def filter_entries_by_keywords(
     url: str, keywords: list[str], exclude: bool = False, max_chars_per_entry: int = 200
 ) -> list[dict]:
     """Filter entries containing (or excluding) specific keywords"""
-    return filter_entries_by_keywords_for_mcp(url, keywords, exclude, max_chars_per_entry)
+    return filter_entries_by_keywords_for_mcp(
+        url, keywords, exclude, max_chars_per_entry
+    )
 
 
 def main():
