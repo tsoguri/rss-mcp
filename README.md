@@ -2,6 +2,29 @@
 
 A Model Context Protocol (MCP) server for RSS feed management and analysis. This server provides tools to discover, parse, filter, and analyze RSS feeds.
 
+I’ve always enjoyed keeping up with the latest news and developments in science and technology, and I was curious what it would look like to explore that information with an LLM. Instead of letting the model do broad, self-defined web searches, I wanted to give it access to curated, trustworthy RSS sources that I already follow.  
+
+This project is my way of experimenting with that idea: using structured, high-quality inputs to help an LLM summarize, analyze, and highlight emerging trends from reliable sources.
+
+## How I Use It
+
+Here are some example prompts you can use with Claude Desktop once the MCP server is configured (outlined below):
+
+
+```
+Find the top RSS feeds that publish technology / scientific papers using the web and then use those feeds to get me the top 5 emerging technology breakthroughs in the last week. Give me a short summary and cite your sources.
+```
+
+```
+What are the top trending technology topics this week from various feeds? Cite your sources.
+```
+
+```
+Get top stories from Google News in the last hour. Cite your sources.
+```
+
+By combining curated RSS data with an LLM, this setup produces more transparent, focused summaries — a cleaner way to stay informed while keeping control over where the information comes from.
+
 ## Features
 
 - **Feed Discovery**: Browse predefined RSS feeds from various sources
@@ -93,23 +116,6 @@ The RSS MCP server provides 7 tools:
 | `get_publications` | Get all available publication names |
 | `get_recent_entries` | Filter feed entries by publication time (last N hours) |
 | `filter_entries_by_keywords` | Filter entries by keywords (include/exclude) |
-
-## Sample Prompts
-
-Here are some example prompts you can use with Claude Desktop once the MCP server is configured:
-
-```
-Find the top RSS feeds that publish technology / scientific papers using the web and then use those feeds to get me the top 5 emerging technology breakthroughs in the last week. Give me a short summary and cite your sources.
-```
-
-```
-What are the top trending technology topics this week from various feeds? Cite your sources.
-```
-
-```
-Get top stories from Google News in the last hour. Cite your sources.
-```
-
 
 ## Development
 
