@@ -37,6 +37,26 @@ COMMON_FEEDS: list[Feed] = [
         category="Technology",
         url="https://tldr.tech",
     ),
+    Feed(
+        publication="Simon Willison Blog",
+        category="Technology",
+        url="https://simonwillison.net/atom/everything/",
+    ),
+    Feed(
+        publication="AIModels.fyi",
+        category="Technology",
+        url="https://aimodels.substack.com/feed",
+    ),
+    Feed(
+        publication="AI Venture Beat",
+        category="Technology",
+        url="https://venturebeat.com/category/ai/feed",
+    ),
+    Feed(
+        publication="Sam Altman Blog",
+        category="Technology",
+        url="https://blog.samaltman.com/posts.atom",
+    ),
     GoogleFeed(
         publication="Google News",
         url="https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en",

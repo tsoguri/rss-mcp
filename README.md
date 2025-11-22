@@ -53,7 +53,7 @@ By combining curated RSS data with an LLM, this setup produces more transparent,
 3. **Test the server**:
    ```bash
    # Using uv
-   uv run python -m src/server.py
+   uv run python -m src.server
 
    # Or using python directly
    python -m src/server.py
